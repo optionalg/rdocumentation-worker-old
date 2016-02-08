@@ -28,6 +28,9 @@ cran_packages_to_install = cran_packages_to_update[condition]
 # STEP 4: Install the necessary packages
 paste("Installing", length(cran_packages_to_install), "packages from CRAN.")
 
+# Save as RData file
+save(cran_packages_to_install, file = "package_versions.RData")
+
 # Convert to json file
 json_update = jsonlite::toJSON(data.frame(name = names(cran_packages_to_update), version = unlist(cran_packages_to_update), row.names = NULL))
 

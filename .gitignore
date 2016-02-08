@@ -1,4 +1,4 @@
 list_packages/logs/*
 libs
-.RData
+*.RData
 package_versions.json
