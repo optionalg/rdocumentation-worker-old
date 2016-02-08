@@ -34,7 +34,6 @@ for (pkg_name in names(cran_packages_to_install)) {
   
   if (counter %% 15 == 0) { # every now and then, kill all child processes just to be sure
     cat("Cleanup: SIGKILL on all processes...")
-    log("Cleanup: SIGKILL on all processes...")
     pskill(unname(unlist(parallel:::children())), signal=SIGKILL)
   }
 }
