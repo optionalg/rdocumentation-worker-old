@@ -1,5 +1,6 @@
 options(repos=structure(c(CRAN="http://cran.rstudio.com")));
 
+# Install packages if needed
 packages = c('jsonlite','RCurl')
 if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
   install.packages(setdiff(packages, rownames(installed.packages())))
