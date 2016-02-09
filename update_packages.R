@@ -17,9 +17,13 @@ install_cran_pkg = function(x) {
   return("success!")
 }
 
+blacklisted_packages = c("AdapEnetClass")
 
 counter = 0
 for (pkg_name in names(cran_packages_to_install)) {
+  if(pkg_name %in% blacklisted_packages) {
+      next()
+  }
   cat(paste0("Installing ", pkg_name, "... "))
   install_process = mcparallel(install_cran_pkg(pkg_name), silent =FALSE)
   result = mccollect(install_process, wait = FALSE, 120)

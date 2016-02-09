@@ -12,7 +12,7 @@ printf "Generated package_versions\n"
 mkdir -p logs
 
 # Move the output to the logs directory
-mv list_packages.Rout ./logs/list_packages.Rout
+mv -f list_packages.Rout ./logs/list_packages.Rout
 printf "Writing log file\n"
 
 # Start script that will look over the package_versions.json and execute the install.packages
@@ -22,5 +22,5 @@ docker run --rm -v "$PWD":/home/ec2-user -v \
   R CMD BATCH update_packages.R
 
 # Move the output to the logs directory
-mv update_packages.Rout ./logs/update_packages.Rout
+mv -f update_packages.Rout ./logs/update_packages.Rout
 printf "Writing log file\n"
