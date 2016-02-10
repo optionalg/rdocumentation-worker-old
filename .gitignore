@@ -1,5 +1,6 @@
 logs
 libs
+helpfiles
 *.RData
 *.Rout
 *.json
