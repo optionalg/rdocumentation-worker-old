@@ -3,7 +3,8 @@
 # NEEDS TO BE CLEANED UP
 
 # CHANGE BELOW TO SET THE PATH OF FOLDER ON SERVER TO WHERE THE HELP FILES SHOULD BE SAVED:
-dest_path = "helpfiles"
+dest_path = paste0(getwd(),"/helpfiles")
+print(paste0("Saving helpfiles to: ", dest_path))
 
 options(repos=structure(c(CRAN="http://cran.rstudio.com")))
 
@@ -34,6 +35,7 @@ all_help_functions = function(pkg){
 	spec_dest_path = paste(dest_path,"/",pkg,"/html/",sep="")
 	dir.create( paste(dest_path,"/",pkg,sep=""), showWarnings = FALSE);
 	dir.create( spec_dest_path, showWarnings = FALSE);
+	log(spec_dest_path)
 	setwd(spec_dest_path);
 	for (p in topics){
 		tools::Rd2HTML(pkgRdDB[[p]], paste(p, 'html', sep = '.'),
