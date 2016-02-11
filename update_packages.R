@@ -17,7 +17,7 @@ install_cran_pkg = function(x) {
   return("success!")
 }
 
-blacklisted_packages = c("AdapEnetClass")
+blacklisted_packages = c("AdapEnetClass", "rgdal","BrailleR")
 
 counter = 0
 for (pkg_name in names(cran_packages_to_install)) {
