@@ -9,7 +9,7 @@ print(paste0("Saving helpfiles to: ", dest_path))
 options(repos=structure(c(CRAN="http://cran.rstudio.com")))
 
 # Install packages if needed
-packages = c('testthat','tools')
+packages = c('testthat','tools','devtools')
 if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
   install.packages(setdiff(packages, rownames(installed.packages())))
 }
